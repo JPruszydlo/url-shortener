@@ -1,0 +1,16 @@
+@media (max-width: 612px) {
+    #short-url-box {
+        @apply w-full text-center text-base p-0 h-auto
+    }
+    #actions-box {
+        @apply w-full text-center
+    }
+    #actions-box button:first-of-type svg {
+        width: 26px;
+        height:26px;
+        margin-bottom: 4px;
+    }
+    #actions-box button:nth-of-type(2), #actions-box button:nth-of-type(3) {
+        width: 40%;
+    }
+}

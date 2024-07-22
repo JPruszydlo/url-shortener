@@ -1,0 +1,15 @@
+.cookie-button {
+    margin-top: 20px;
+    padding: 5px 10px 5px 10px;
+    
+}
+.cookie-button:first-of-type {
+    @apply text-white bg-blue-500 rounded-xl hover:bg-blue-600;
+    width: 184px;
+    margin-right: 10px;
+}
+.cookie-button:last-of-type {
+    @apply text-red-400 hover:text-red-500 underline;
+    padding: 0;
+    width: 141px;
+}

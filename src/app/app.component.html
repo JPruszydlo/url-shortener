@@ -1,0 +1,54 @@
+<main class="main w-full h-full">
+  <app-header [hostname]="hostname" />
+  <div
+    style="min-width: 355px"
+    class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  >
+    <p
+      class="text-4xl font-extrabold text-white text-center"
+      style="
+        text-shadow: -1px 0px 5px darkslategrey, 0 1px 5px darkslategrey,
+          1px 0 5px darkslategrey, 0 -1px black;
+      "
+    >
+      Create Short URLs
+    </p>
+    <app-shortener (shortenUrlEvent)="shortenUrl($event)" />
+    <app-url-history [refreshEvent]="refreshHistory.asObservable()" />
+  </div>
+  <footer
+    class="absolute bottom-2 text-center left-0 right-0 font-bold font-sans text-sm"
+  >
+    <p>Copyright &#169; {{ currentYear }} AJ Studio</p>
+    <p class="text-blue-950 underline">
+      <a href="mailto:contact@myshort.pl">contact&#64;myshort.pl</a>
+    </p>
+  </footer>
+</main>
+
+<div
+  class="w-full h-full bg-black fixed top-0 left-0 bg-opacity-50"
+  *ngIf="!cookieConsented"
+>
+  <div
+    style="
+      box-shadow: 0 0 30px lightslategray;
+      max-width: 380px;
+      border: 1px solid black;
+    "
+    class="absolute w-full bg-white left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-5 font-mono font-semibold text-sm text-justify rounded-lg"
+  >
+    <p>
+      This website uses cookies to save your shortened urls. Please accept
+      cookies if You want to store urls for future use.
+    </p>
+    <p class="text-center">
+      <button class="cookie-button" (click)="consentCookie(true)">
+        Yes, I accept Cookies
+      </button>
+      <button class="cookie-button" (click)="consentCookie(false)">
+        No, reject Cookies
+      </button>
+    </p>
+  </div>
+</div>
