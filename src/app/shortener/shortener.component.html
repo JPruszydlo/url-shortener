@@ -1,25 +1,18 @@
 <div class="pt-5 text-center mb-5">
-  <form>
-    <input
-      #LongUrl
-      type="text"
-      placeholder="Enter link to shorten"
-      style="
-        padding: 5px;
-        border-right-width: 0;
-        border: 1px solid black;
-        width: 50%;
-        height: 32px;
-        box-shadow: 0 0 15px lightgray;
-      "
-    />
+  <input
+    #LongUrl
+    type="text"
+    placeholder="Enter or Paste Your long URL"
+    class="rounded-xl text-lg"
+    style="padding: 5px; width: 90%; height: 32px"
+    (keyup.enter)="shortenUrl(LongUrl.value); LongUrl.value = ''"
+  />
 
-    <button
-      (click)="shortenUrl(LongUrl.value); LongUrl.value = ''"
-      style="box-shadow: 0 0 15px lightgray"
-      class="relative -top-0.5 bg-red-600 rounded-e-lg pl-2 pr-2 pt-1 pb-1 hover:bg-red-700 font-semibold font-mono text-white"
-    >
-      Shorten link
-    </button>
-  </form>
+  <button
+    class="bg-blue-100 pl-2 pr-2 pt-1 pb-1 rounded-lg font-semibold text-base absolute top-14"
+    style="right: 10%"
+    (click)="shortenUrl(LongUrl.value); LongUrl.value = ''"
+  >
+    Shorten
+  </button>
 </div>
